@@ -1,0 +1,65 @@
+# =====================
+# portal-copy/server ignores
+# =====================
+portal-copy/server/node_modules/
+portal-copy/server/.env
+portal-copy/server/package-lock.json
+portal-copy/server/dist/
+portal-copy/server/tmp/
+portal-copy/server/out-tsc/
+portal-copy/server/bazel-out/
+portal-copy/server/.angular/cache
+portal-copy/server/.sass-cache
+portal-copy/server/coverage/
+portal-copy/server/npm-debug.log
+portal-copy/server/yarn-error.log
+portal-copy/server/testem.log
+portal-copy/server/*.log
+portal-copy/server/*.pyc
+
+# =====================
+# portal-copy/client ignores
+# =====================
+portal-copy/client/node_modules/
+portal-copy/client/.env
+portal-copy/client/package-lock.json
+portal-copy/client/dist/
+portal-copy/client/tmp/
+portal-copy/client/out-tsc/
+portal-copy/client/.angular/cache
+portal-copy/client/.sass-cache
+portal-copy/client/coverage/
+portal-copy/client/npm-debug.log
+portal-copy/client/yarn-error.log
+portal-copy/client/testem.log
+
+# =====================
+# AUM-API-Docker ignores
+# =====================
+AUM-API-Docker/__pycache__/
+AUM-API-Docker/*.pyc
+
+# =====================
+# Global ignores
+# =====================
+# VSCode and IDE files
+.vscode/
+*.idea/
+*.project
+*.classpath
+*.settings/
+
+# Logs and debugging files
+*.log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# =====================
+# Files/Folders to include
+# =====================
+!amu-agent-compiled-x64/
