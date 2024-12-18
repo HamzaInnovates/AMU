@@ -16,6 +16,7 @@ portal-copy/server/yarn-error.log
 portal-copy/server/testem.log
 portal-copy/server/*.log
 portal-copy/server/*.pyc
+portal-copy/server/*.gitignore
 
 # =====================
 # portal-copy/client ignores
@@ -32,6 +33,7 @@ portal-copy/client/coverage/
 portal-copy/client/npm-debug.log
 portal-copy/client/yarn-error.log
 portal-copy/client/testem.log
+portal-copy/client/*.gitignore
 
 # =====================
 # AUM-API-Docker ignores
