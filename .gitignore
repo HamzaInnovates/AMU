@@ -62,4 +62,4 @@ Thumbs.db
 # =====================
 # Files/Folders to include
 # =====================
-!amu-agent-compiled-x64/
+amu-agent-compiled-x64/
