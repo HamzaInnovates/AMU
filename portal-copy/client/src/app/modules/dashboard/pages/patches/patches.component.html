@@ -1,0 +1,40 @@
+<!-- patches.component.html -->
+
+<div class="max-w-2xl mx-auto p-6 bg-white rounded-md shadow-md m-4">
+    <!-- Set Latest Patch Section -->
+    <div class="mb-4">
+      <h2 class="text-2xl font-bold mb-4">Set Latest Patch</h2>
+      <form [formGroup]="setPatchForm">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2">Patch Version</label>
+          <input type="text" class="appearance-none border rounded w-full py-2 px-3" formControlName="version" required>
+          <div *ngIf="isInvalid('version', setPatchForm)" class="text-red-500 text-sm mt-1">Patch version is required</div>
+        </div>
+        <button type="button" class="bg-primary-500 text-white py-1 px-2 rounded" (click)="updatePatch()">Set Latest Patch</button>
+      </form>
+    </div>
+<!-- Add File Section -->
+<div class="mb-4">
+  <h2 class="text-2xl font-bold mb-4">Add File</h2>
+  <form [formGroup]="fileForm">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+      <input type="text" class="appearance-none border rounded w-full py-2 px-3" formControlName="name" required>
+      <div *ngIf="isInvalid('name', fileForm)" class="text-red-500 text-sm mt-1">Name is required</div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Version</label>
+      <input type="text" class="appearance-none border rounded w-full py-2 px-3" formControlName="version" required>
+      <div *ngIf="isInvalid('version', fileForm)" class="text-red-500 text-sm mt-1">Version is required</div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">File</label>
+      <input type="file" (change)="onFileChange($event)" formControlName="file" required>
+      <div *ngIf="isInvalid('file', fileForm)" class="text-red-500 text-sm mt-1">File is required</div>
+    </div>
+    <button type="button" class="bg-primary-500 text-white py-1 px-2 rounded" (click)="addFile()">Add File</button>
+  </form>
+</div>
+
+  </div>
+  

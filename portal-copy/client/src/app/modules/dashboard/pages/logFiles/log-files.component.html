@@ -1,0 +1,43 @@
+<!-- log-files.component.html -->
+
+<div class="max-w-3xl mx-auto p-6 bg-white rounded-md shadow-md m-4">
+  <h2 class="text-3xl font-bold mb-6 text-center">Logs</h2>
+
+  <!-- Input fields to enter log information -->
+  <div class="mb-4">
+    <label for="hwid" class="block text-sm font-medium text-gray-700">HWID:</label>
+    <input
+      type="text"
+      id="hwid"
+      [(ngModel)]="newLog.hwid"
+      class="mt-1 p-2 w-full border rounded-md"
+      placeholder="Enter HWID..."
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="version" class="block text-sm font-medium text-gray-700">Version:</label>
+    <input
+      type="text"
+      id="version"
+      [(ngModel)]="newLog.version"
+      class="mt-1 p-2 w-full border rounded-md"
+      placeholder="Enter version..."
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="logMessage" class="block text-sm font-medium text-gray-700">Log Messages:</label>
+    <textarea
+      id="logMessage"
+      [(ngModel)]="newLog.logs"
+      class="mt-1 p-2 w-full border rounded-md"
+      placeholder="Enter log messages (one per line)..."
+    ></textarea>
+  </div>
+
+  <!-- Apply styling to increase button size and position it to the right -->
+  <div class="flex justify-end">
+    <button class="btn-action bg-blue-500 text-white rounded py-2 px-4" (click)="addLog()"><span class="text-sm">Add Log</span></button>
+  </div>
+</div>

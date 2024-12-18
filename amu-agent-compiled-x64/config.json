@@ -1,0 +1,7 @@
+{
+	"config": {
+		"API_SERVER": "http://localhost:8000",
+		"LOG_PATH": "C:\\ProgramData\\Microsoft\\Windows Defender\\Support\\",
+		"SLEEP_TIME": 10
+	}
+}

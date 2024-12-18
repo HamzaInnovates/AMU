@@ -1,0 +1,33 @@
+<ng-container *ngIf="leaveRequests.length === 0; else reportData">
+    <app-loading></app-loading>
+</ng-container>
+
+<ng-template #reportData>
+    <div class="relative overflow-x-auto sm:rounded-lg p-4">
+        <div *ngFor="let request of leaveRequests" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <div class="user-info">
+                <p class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    User Name: {{ request.user_name }} - Machine Name: {{ request.machine_name }}
+                </p>
+
+                <!-- Check if logs array is not empty -->
+                <ng-container *ngIf="request.logs && request.logs.length > 0; else noLogs">
+                    <div class="log-entries">
+                        <!-- Iterate through logs for the current user -->
+                        <p *ngFor="let log of request.logs" class="px-6 py-4">Log Entry: {{ log }}</p>
+                    </div>
+                </ng-container>
+
+                <ng-template #noLogs>
+                    <p class="px-6 py-4">Logs: ----</p>
+                </ng-template>
+
+                <hr class="user-divider" /> <!-- Add a horizontal line between user entries -->
+            </div>
+        </div>
+
+        <div class="mt-4 flex justify-end">
+            <!-- Add any additional buttons or actions as needed -->
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,30 @@
+<div class="relative bg-white dark:bg-night-700">
+  <div class="mx-auto px-5">
+    <div class="flex items-center justify-between py-3.5 md:justify-start">
+      <!-- Mobile Navigation Menu Button-->
+      <div class="sm:order-1 md:hidden">
+        <button
+          (click)="toggleMobileMenu()"
+          type="button"
+          class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 hover:text-gray-500 dark:bg-night-700 dark:text-night-200 dark:hover:text-night-400">
+          <span class="sr-only">Open menu</span>
+          <!-- Heroicon name: outline/menu -->
+          <svg-icon src="assets/icons/heroicons/outline/menu.svg" [svgClass]="'h-6 w-6'"> </svg-icon>
+        </button>
+      </div>
+
+      <!-- Logo -->
+      <div class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden">
+        <a class="flex items-center justify-center rounded p-2 focus:outline-none focus:ring-0">
+          <svg-icon src="assets/icons/logo.svg" class="h-4 w-4">
+            <!-- Add any attributes or content for the SVG here if needed -->
+          </svg-icon>
+        </a>
+        <b class="hidden pl-3 text-sm font-bold dark:text-night-50 sm:block">  </b>
+      </div>
+      <!-- Desktop Menu -->
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <app-navbar-mobile></app-navbar-mobile>
+</div>

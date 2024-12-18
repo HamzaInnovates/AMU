@@ -1,0 +1,31 @@
+version: '3'
+services:
+  amu_api:
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    environment:
+      - MONGO_URL=mongodb
+      - MONGO_PORT=27107
+    networks:
+      - amu_net
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - 27107:27107
+    volumes:
+      - dbdata6:/data/db
+    networks:
+      - amu_net
+
+volumes:
+  dbdata6:
+
+networks:
+  amu_net:
+    driver: bridge

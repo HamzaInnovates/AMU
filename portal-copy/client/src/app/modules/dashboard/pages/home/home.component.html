@@ -1,0 +1,91 @@
+<!-- Updated Users Table -->
+<div class="relative overflow-x-auto sm:rounded-lg p-4" *ngIf="updatedUsers.length > 0; else noUpdatedUsers">
+  <h2 class="text-lg font-semibold mb-2">Updated Users {{ updatedCount }} </h2>
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Machine Name</th>
+        <th>Version</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of updatedUsers">
+        <td>{{ user.user_name }}</td>
+        <td>{{ user.machine_name }}</td>
+        <td>{{ user.version }}</td>
+        <td>{{ getStatus(user) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- If no updated users, display a single row with placeholder values -->
+<ng-template #noUpdatedUsers>
+  <div class="relative overflow-x-auto sm:rounded-lg p-4">
+    <h2 class="text-lg font-semibold mb-2">Updated Users {{ updatedCount }}</h2>
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Machine Name</th>
+          <th>Version</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+
+<!-- Outdated Users Table -->
+<div class="relative overflow-x-auto sm:rounded-lg p-4" *ngIf="outdatedUsers.length > 0">
+  <h2 class="text-lg font-semibold mb-2">Outdated Users {{ outdatedCount }}</h2>
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Machine Name</th>
+        <th>Version</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of outdatedUsers">
+        <td>{{ user.user_name }}</td>
+        <td>{{ user.machine_name }}</td>
+        <td>{{ user.version }}</td>
+        <td>{{ getStatus(user) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Existing Users Table -->
+<div class="relative overflow-x-auto sm:rounded-lg p-4" *ngIf="users.length > 0">
+  <h2 class="text-lg font-semibold mb-2">All Users {{ totalCount }}</h2>
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Machine Name</th>
+        <th>Version</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.user_name }}</td>
+        <td>{{ user.machine_name }}</td>
+        <td>{{ user.version }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
